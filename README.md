@@ -1,4 +1,3 @@
-Certainly! Here’s a README section that explains each script in your `package.json`:
 
 ---
 
