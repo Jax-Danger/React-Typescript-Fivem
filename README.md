@@ -106,4 +106,3 @@ Installs a specified package in the `web` directory.
 
 ---
 
-Feel free to include this section in your README file to help others understand and use the scripts effectively.
