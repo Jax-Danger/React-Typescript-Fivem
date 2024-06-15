@@ -11,7 +11,7 @@ lua54 'yes'
 ui_page 'build/web/index.html'
 
 client_script "build/client/**/*"
-server_scripts {'@oxmysql/lib/MySQL.ts', "build/server/**/*"}
+server_scripts "build/server/**/*"
 
 files {
   'build/web/index.html',
