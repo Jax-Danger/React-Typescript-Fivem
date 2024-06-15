@@ -12,15 +12,16 @@
 		"preview-web": "cd web && npm run preview"
 	},
 	"dependencies": {},
-	"devDependencies": {
-		"@citizenfx/client": "^2.0.7900-1",
-		"@citizenfx/server": "^2.0.7900-1",
-		"@types/node": "^18.11.10",
-		"esbuild": "^0.20.2",
-		"esbuild-plugin-clean": "^1.0.1",
-		"esbuild-plugin-tsc": "^0.4.0",
-		"rcon-client": "^4.2.4",
-		"typescript": "^5.4.5",
-		"vite": "^3.2.3"
-	}
+	  "devDependencies": {
+	    "@citizenfx/client": "^2.0.7900-1",
+	    "@citizenfx/server": "^2.0.7900-1",
+	    "@types/node": "^18.11.10",
+	    "esbuild": "^0.20.2",
+	    "esbuild-plugin-clean": "^1.0.1",
+	    "esbuild-plugin-tsc": "^0.4.0",
+	    "http-server": "^14.1.1",
+	    "rcon-client": "^4.2.4",
+	    "typescript": "^5.4.5",
+	    "vite": "^3.2.3"
+	  }
 }
