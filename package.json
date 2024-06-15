@@ -1,4 +1,4 @@
-	{
+{
 	"name": "MainPower-Plate",
 	"license": "MIT",
 	"private": true,
@@ -6,14 +6,14 @@
 	"type": "module",
 	"scripts": {
 		"build": "node scripts/build.js",
-		"dev": "concurrently 'node scripts/dev.js' 'cd web && yarn build --watch'",
+		"dev": "concurrently \"node scripts/dev.js\" \"cd web && yarn build --watch\"",
 		"postinstall": "cd web && yarn install",
 		"webI": "cd web && yarn add",
 		"preview-web": "cd web && npm run preview"
 	},
 	"dependencies": {},
-	 "devDependencies": {
-	    	"@citizenfx/client": "^2.0.7900-1",
+	"devDependencies": {
+		"@citizenfx/client": "^2.0.7900-1",
 		"@citizenfx/server": "^2.0.7900-1",
 		"@types/node": "^18.11.10",
 		"esbuild": "^0.20.2",
@@ -24,5 +24,5 @@
 		"typescript": "^5.4.5",
 		"vite": "^3.2.3",
 		"concurrently": "^8.2.0"
-	  }
+	}
 }
