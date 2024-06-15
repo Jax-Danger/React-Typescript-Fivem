@@ -51,11 +51,11 @@ const watchResourceChanges = () => {
     persistent: true,
   });
 
-watcher.on('change', async (filePath) => {
-  console.log(`File ${filePath} has been changed`);
+watcher.on('change', async (path) => {
+  console.log(`File ${path} has been changed`);
 
   // Normalize the path to handle different OS path separators
-  const normalizedPath = path.normalize(filePath);
+  const normalizedPath = path.normalize(path);
 
   // Determine if the change is in server or client directory
   if (normalizedPath.includes(path.normalize('/server/'))) {
