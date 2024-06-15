@@ -9,7 +9,8 @@
 		"dev": "concurrently \"node scripts/dev.js\" \"cd web && yarn build --watch\"",
 		"postinstall": "cd web && yarn install",
 		"webI": "cd web && yarn add",
-		"preview-web": "cd web && npm run preview"
+		"preview-web": "cd web && npm run preview",
+		"watchres": "node scripts/watchres.js"
 	},
 	"dependencies": {},
 	"devDependencies": {
