@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 24px;
 	font-weight: 400;
@@ -29,3 +29,4 @@ div#__next {
 main {
 	@apply h-full;
 }
+ */
