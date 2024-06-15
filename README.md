@@ -66,7 +66,6 @@ To preview the frontend application during development:
 ```bash
 npm run preview-web
 ```
+This command runs vite preview from the web/ directory, allowing you to view the frontend application in a development server.
 
-This command runs `vite preview` from the `web/` directory, allowing you to view the frontend application in a development server.
-```
 
