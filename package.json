@@ -7,8 +7,9 @@
 	"scripts": {
 		"build": "node scripts/build.js",
 		"dev": "concurrently 'node scripts/dev.js' 'cd web && yarn build --watch'",
-		"postinstall": "cd web && yarn install && npm run webI",
-		"webI": "cd web && yarn add"
+		"postinstall": "cd web && yarn install && npm run webI && npm link",
+		"webI": "cd web && yarn add",
+		"preview-web": "cd web && npm run preview"
 	},
 	"dependencies": {},
 	"devDependencies": {
