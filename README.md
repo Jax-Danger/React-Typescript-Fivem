@@ -22,12 +22,6 @@ To install and set up the project, follow these steps:
 
    This will install both the main project dependencies and the dependencies for the `web` package located in the `web/` directory.
 
-3. **Link `web` package binaries:**
-   ```bash
-   npm run postinstall
-   ```
-
-   This command will install dependencies for the `web` package and create symbolic links so that commands from `web` package (`preview`, etc.) are accessible from the main project root.
 
 ## Project Structure
 
