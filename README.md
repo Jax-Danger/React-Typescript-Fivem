@@ -1,7 +1,7 @@
 Certainly! Here's the entire `README.md` content formatted in markdown, including all sections and steps:
 
 
-# MainPower-Plate Project
+# MainPower-Plate 
 
 This project is structured to manage a complex application setup involving Node.js, TypeScript, and web frontend development tools.
 
