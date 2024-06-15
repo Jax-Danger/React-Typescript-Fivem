@@ -1,108 +1,72 @@
+Certainly! Here's the entire `README.md` content formatted in markdown, including all sections and steps:
 
----
 
-## Scripts Overview
+# MainPower-Plate Project
 
-This project uses several npm scripts to manage development, building, and package installation processes. Below is a description of each script and its purpose.
+This project is structured to manage a complex application setup involving Node.js, TypeScript, and web frontend development tools.
 
-### Scripts
+## Installation
 
-#### `build`
+To install and set up the project, follow these steps:
 
-```sh
-npm run build
-```
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd MainPower-Plate
 
-Runs the build process for the project.
 
--   **Description**: Executes the `scripts/build.js` file using Node.js.
--   **Purpose**: This script is used to build the project, typically for production.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-#### `dev`
+   This will install both the main project dependencies and the dependencies for the `web` package located in the `web/` directory.
 
-```sh
+3. **Link `web` package binaries:**
+   ```bash
+   npm run postinstall
+   ```
+
+   This command will install dependencies for the `web` package and create symbolic links so that commands from `web` package (`preview`, etc.) are accessible from the main project root.
+
+## Project Structure
+
+The project consists of the following main parts:
+
+- **Root (`./`):** Contains the main project configuration (`package.json`), scripts for building (`scripts/build.js`), and development (`scripts/dev.js`).
+
+- **Web (`./web`):** Contains a frontend web application configured with Vite for development and production builds. This directory also includes its own `package.json` specifying frontend dependencies and build scripts.
+
+## Usage
+
+### Development
+
+To start development mode for both the backend and frontend (using concurrently):
+
+```bash
 npm run dev
 ```
 
-Runs the development environment.
+This command starts backend development with `node scripts/dev.js` and watches frontend changes with `vite` in the `web/` directory.
 
--   **Description**: Uses `concurrently` to run two commands simultaneously:
-    -   `node scripts/dev.js`: Starts the development server or any other development-specific scripts.
-    -   `cd web && yarn build --watch`: Changes directory to `web` and runs `yarn build` in watch mode.
--   **Purpose**: This script is used to start the development environment, allowing for live reloading and other development conveniences.
+### Building
 
-#### `postinstall`
+To build the project for production:
 
-```sh
-npm run postinstall
+```bash
+npm run build
 ```
 
-Runs after the `npm install` command.
+This command builds TypeScript files (`tsc`) and then uses `vite` to bundle the frontend application for production.
 
--   **Description**: Changes directory to `web` and runs `yarn install` to install dependencies for the `web` project.
--   **Purpose**: This script ensures that the `web` project has its dependencies installed after the main project’s dependencies are installed.
+### Previewing the Frontend
 
-#### `webI`
+To preview the frontend application during development:
 
-```sh
-npm run webI <package_name>
+```bash
+npm run preview-web
 ```
 
-Installs a specified package in the `web` directory.
-
--   **Description**: Changes directory to `web` and runs `yarn add` followed by the specified package name(s).
--   **Usage**:
-    -   To install a single package: `npm run webI package_name`
-    -   To install multiple packages: `npm run webI package_name1 package_name2`
--   **Purpose**: This script provides a convenient way to add new packages to the `web` project from the root directory.
-
-### Example Usage
-
-1. **Building the Project**
-
-    To build the project, run:
-
-    ```sh
-    npm run build
-    ```
-
-2. **Starting the Development Environment**
-
-    To start the development environment, run:
-
-    ```sh
-    npm run dev
-    ```
-
-3. **Post-Installation Dependencies**
-
-    After installing the main project dependencies with:
-
-    ```sh
-    npm install
-    ```
-
-    The `postinstall` script will automatically run, installing the `web` project dependencies.
-
-4. **Installing Packages in `web`**
-
-    To install a package in the `web` directory, run:
-
-    ```sh
-    npm run webI <package_name>
-    ```
-
-    For example, to install `lodash`:
-
-    ```sh
-    npm run webI lodash
-    ```
-
-    To install multiple packages, list them separated by spaces:
-
-    ```sh
-    npm run webI lodash axios
-    ```
-
----
+This command runs `vite preview` from the `web/` directory, allowing you to view the frontend application in a development server.
+```
 
