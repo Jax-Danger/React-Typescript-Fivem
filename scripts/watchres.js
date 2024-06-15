@@ -51,20 +51,19 @@ const watchResourceChanges = () => {
     persistent: true,
   });
 
-watcher.on('change', async (path) => {
-  console.log(`File ${path} has been changed`);
+watcher.on('change', async (filePath) => {
+  console.log(`File ${filePath} has been changed`);
 
-  // Normalize the path to handle different OS path separators
-  const normalizedPath = path.normalize(path);
+  // Normalize the path to handle different OS path separators and Unicode normalization
+  const normalizedPath = filePath.normalize('NFC'); // Use NFC or NFD as needed
 
-  // Determine if the change is in server or client directory
-  if (normalizedPath.includes(path.normalize('/server/'))) {
+  // Determine if the change is in the server or client directory
+  if (normalizedPath.includes(path.normalize('/server/').normalize('NFC'))) {
     await buildServerResource();
-  } else if (normalizedPath.includes(path.normalize('/client/'))) {
+  } else if (normalizedPath.includes(path.normalize('/client/').normalize('NFC'))) {
     await buildClientResource();
   } else {
     console.log('Skipping build for unknown resource');
   }
 });
-
 watchResourceChanges();
