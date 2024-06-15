@@ -31,23 +31,25 @@ const createBuildSettings = (path) => ({
 });
 
 const restartResource = async () => {
-	// try {
-	//   const rcon = new Rcon({
-	//     host: "127.0.0.1", port: 30120, password: "root"
-	//   })
-	//   rcon.on("connect", () => console.log("connected"))
-	//   rcon.on("authenticated", () => console.log("authenticated"))
-	//   rcon.on("end", () => console.log("end"))
-	//   await rcon.connect()
-	//   console.log("Connected to RCON")
-	//   await rcon.send("restart")
-	//   console.log("Resource restarted")
-	// } catch (error) {
-	//   console.error("Failed to restart resource", error)
-	// }
+	try {
+		const rcon = new Rcon({
+			host: "127.0.0.1",
+			port: 30120,
+			password: "root",
+		});
+		rcon.on("connect", () => console.log("connected"));
+		rcon.on("authenticated", () => console.log("authenticated"));
+		rcon.on("end", () => console.log("end"));
+		await rcon.connect();
+		console.log("Connected to RCON");
+		await rcon.send("restart");
+		console.log("Resource restarted");
+	} catch (error) {
+		console.error("Failed to restart resource", error);
+	}
 };
 
-const buildResource = async () => {
+export const buildResource = async () => {
 	console.log("Building resource");
 	await build(createBuildSettings("server"));
 	await build(createBuildSettings("client"));

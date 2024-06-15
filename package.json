@@ -23,6 +23,7 @@
 		"rcon-client": "^4.2.4",
 		"typescript": "^5.4.5",
 		"vite": "^3.2.3",
-		"concurrently": "^8.2.0"
+		"concurrently": "^8.2.0",
+		"chokidar": "^3.5.3"
 	}
 }
