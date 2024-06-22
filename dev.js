@@ -62,7 +62,11 @@ async function runDev() {
 
 		watcher.on("change", async (path) => {
 			console.log(`File ${path} has changed`);
-			await buildClientAndServer();
+			if (path.startsWith("web")) {
+				await buildResourceAndUI();
+			} else {
+				await buildClientAndServer();
+			}
 		});
 	} catch (error) {
 		console.error("Error during development:", error);
