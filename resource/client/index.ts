@@ -1,6 +1,3 @@
-// Import necessary types from FiveM's typings
-import { SendNuiMessage, RegisterCommand, RegisterNuiCallbackType, on } from "fivem-js";
-
 // Define typings for SendNuiMessage
 interface NuiMessagePayload {
   action: string;
@@ -20,7 +17,7 @@ RegisterCommand("setVisible", () => {
 
 // Register a NUI callback to handle 'hideFrame' event
 RegisterNuiCallbackType("hideFrame");
-on("__cfx_nui:hideFrame", (_, cb) => {
+on("__cfx_nui:hideFrame", (_: any, cb: any) => {
   SetNuiFocus(false, false); // Assuming SetNuiFocus is defined elsewhere
   sendReactMessage("setVisible", false);
   cb({}); // Callback with an empty object

@@ -17,6 +17,7 @@
 	"devDependencies": {
 		"@citizenfx/client": "^2.0.7900-1",
 		"@citizenfx/server": "^2.0.7900-1",
+		"@overextended/ox_lib": "^3.22.2",
 		"@types/node": "^18.11.10",
 		"chokidar": "^3.5.3",
 		"concurrently": "^8.2.0",
