@@ -13,7 +13,6 @@
 		"watchres": "node scripts/watchres.js"
 	},
 	"dependencies": {
-		"@overextended/ox_lib": "^3.22.2",
 		"esbuild-plugin-fileloc": "^0.0.6"
 	},
 	"devDependencies": {
