@@ -5,9 +5,19 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "module": "CommonJS",
-    "types": ["@citizenfx/server", "@types/node"],
-    "lib": ["ES2020"]
+    "types": [
+      "@citizenfx/server",
+      "@types/node"
+    ],
+    "lib": [
+      "ES2020"
+    ]
   },
-  "include": ["./**/*"],
-  "exclude": ["**/node_modules", "**/__tests__/*"]
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__tests__/*"
+  ]
 }
