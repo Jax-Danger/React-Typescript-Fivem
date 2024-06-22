@@ -1,1 +1,1 @@
-console.log('hello from client!')
+import { config } from '../../config/config';
