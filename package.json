@@ -5,7 +5,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "node scripts/build.js",
+		"build": "node ./prod.build.js",
 		"dev": "concurrently \"node scripts/dev.js\" \"cd web && yarn build --watch\"",
 		"postinstall": "cd web && yarn install",
 		"webI": "cd web && yarn add",
