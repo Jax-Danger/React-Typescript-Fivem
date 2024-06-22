@@ -8,13 +8,11 @@ version '1.0.0'
 
 lua54 'yes'
 
+server_scripts {'build/server.js'}
+client_script {"build/client.js"}
 ui_page 'build/web/index.html'
 
-client_script "build/client/**/*"
-server_scripts "build/server/**/*"
-
 files {
-  'build/web/index.html',
-  'build/web/js/index.js',
-  'build/web/styles/index.css'
+    'build/web/index.html', 'build/web/js/index.js',
+    'build/web/styles/index.css'
 }

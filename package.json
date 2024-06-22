@@ -12,19 +12,21 @@
 		"preview-web": "cd web && npm run preview",
 		"watchres": "node scripts/watchres.js"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"esbuild-plugin-fileloc": "^0.0.6"
+	},
 	"devDependencies": {
 		"@citizenfx/client": "^2.0.7900-1",
 		"@citizenfx/server": "^2.0.7900-1",
 		"@types/node": "^18.11.10",
+		"chokidar": "^3.5.3",
+		"concurrently": "^8.2.0",
 		"esbuild": "^0.20.2",
 		"esbuild-plugin-clean": "^1.0.1",
 		"esbuild-plugin-tsc": "^0.4.0",
 		"http-server": "^14.1.1",
 		"rcon-client": "^4.2.4",
 		"typescript": "^5.4.5",
-		"vite": "^3.2.3",
-		"concurrently": "^8.2.0",
-		"chokidar": "^3.5.3"
+		"vite": "^3.2.3"
 	}
 }

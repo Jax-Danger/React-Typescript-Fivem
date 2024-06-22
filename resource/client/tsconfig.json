@@ -6,9 +6,19 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "module": "CommonJS",
-    "types": ["@citizenfx/client", "@types/node"],
-    "lib": ["ES2020"]
+    "types": [
+      "@citizenfx/client",
+      "@types/node"
+    ],
+    "lib": [
+      "ES2020"
+    ]
   },
-  "include": ["./**/*"],
-  "exclude": ["**/node_modules", "**/__tests__/*"]
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__tests__/*"
+  ]
 }
