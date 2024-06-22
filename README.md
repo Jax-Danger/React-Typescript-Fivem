@@ -2,9 +2,6 @@ Certainly! Here's the entire `README.md` content formatted in markdown, includin
 
 
 # MainPower-Plate 
-
-This project is structured to manage a complex application setup involving Node.js, TypeScript, and web frontend development tools.
-
 ## Installation
 
 To install and set up the project, follow these steps:
