@@ -9,7 +9,7 @@
 		"dev": "node ./dev.js",
 		"postinstall": "cd web && yarn install",
 		"webI": "cd web && yarn add",
-		"preview-web": "cd web && npm run preview"
+		"web": "cd web && npm run preview"
 	},
 	"dependencies": {
 		"esbuild-plugin-fileloc": "^0.0.6"
