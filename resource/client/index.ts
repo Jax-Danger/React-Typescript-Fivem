@@ -1,4 +1,4 @@
-// Define typings for SendNuiMessage
+
 interface NuiMessagePayload {
   action: string;
   data: any;
@@ -22,3 +22,4 @@ on("__cfx_nui:hideFrame", (_: any, cb: any) => {
   sendReactMessage("setVisible", false);
   cb({}); // Callback with an empty object
 });
+
