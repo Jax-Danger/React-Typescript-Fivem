@@ -34,6 +34,12 @@ The project consists of the following main parts:
 
 ### Development
 
+Install all dependencys of the project
+
+```bash
+npm i
+```
+
 To start development mode for both the backend and frontend:
 
 ```bash
@@ -41,6 +47,16 @@ npm run dev
 ```
 
 This command starts backend development with `node ./dev.js` and watches frontend changes with `vite` in the `web/` directory.
+
+#### This will refresh ui and resources on save and work as a build!
+
+### Ui Web
+
+Opens ui via web to edit easier!
+
+```bash
+npm run web
+```
 
 ### Building
 
