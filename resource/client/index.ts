@@ -1,5 +1,4 @@
 
-// Define typings for SendNuiMessage
 interface NuiMessagePayload {
   action: string;
   data: any;
@@ -18,7 +17,7 @@ RegisterCommand("setVisible", () => {
 
 // Register a NUI callback to handle 'hideFrame' event
 RegisterNuiCallbackType("hideFrame");
-on("__cfx_nui:hideFrame", (_, cb) => {
+on("__cfx_nui:hideFrame", (_: any, cb: any) => {
   SetNuiFocus(false, false); // Assuming SetNuiFocus is defined elsewhere
   sendReactMessage("setVisible", false);
   cb({}); // Callback with an empty object
