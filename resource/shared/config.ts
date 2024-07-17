@@ -11,5 +11,11 @@ export default config;
 
 // Interfaces for type safety
 interface Config {
-  respawnCoords: number[];
+  string: string;
+  number: number;
+  boolean: boolean;
+  array: number[];
+  object: {
+    something: string;
+  }
 }

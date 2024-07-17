@@ -1,1 +1,1 @@
-import { config } from '../../config/config';
+import config from '../shared/config';
