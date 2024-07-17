@@ -11,5 +11,5 @@ export default config;
 
 // Interfaces for type safety
 interface Config {
-  respawnCoords: [number, number, number];
+  respawnCoords: number[];
 }

@@ -18,6 +18,7 @@ client_scripts {
 ui_page 'build/web/index.html'
 
 files {
+  'config.jsonc',
     'build/web/index.html',
     'build/web/js/index.js',
     'build/web/styles/index.css'
