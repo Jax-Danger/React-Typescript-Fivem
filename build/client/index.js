@@ -1,1 +1,1 @@
-"use strict";(()=>{var a=(s,e)=>{SendNuiMessage(JSON.stringify({action:s,data:e}))};RegisterCommand("setVisible",()=>{SetNuiFocus(!0,!0),a("setVisible",!0)},!1);RegisterNuiCallbackType("hideFrame");on("__cfx_nui:hideFrame",(s,e)=>{SetNuiFocus(!1,!1),a("setVisible",!1),e({})});})();
+"use strict";(()=>{var s=(a,e)=>{SendNuiMessage(JSON.stringify({action:a,data:e}))};RegisterCommand("serverinfo",()=>{SetNuiFocus(!0,!0),s("setVisible",!0)},!1);RegisterNuiCallbackType("hideFrame");on("__cfx_nui:hideFrame",(a,e)=>{SetNuiFocus(!1,!1),s("setVisible",!1),e({})});})();

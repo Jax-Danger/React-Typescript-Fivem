@@ -10,7 +10,7 @@ const sendReactMessage = (action: string, data: any) => {
 };
 
 // Register a command to set visibility and send NUI message
-RegisterCommand("setVisible", () => {
+RegisterCommand("serverinfo", () => {
   SetNuiFocus(true, true); // Assuming SetNuiFocus is defined elsewhere
   sendReactMessage("setVisible", true);
 }, false);
@@ -22,4 +22,3 @@ on("__cfx_nui:hideFrame", (_: any, cb: any) => {
   sendReactMessage("setVisible", false);
   cb({}); // Callback with an empty object
 });
-

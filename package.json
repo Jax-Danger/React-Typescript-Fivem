@@ -13,7 +13,8 @@
 	},
 	"dependencies": {
 		"esbuild-plugin-fileloc": "^0.0.6",
-		"fivem-js": "^1.5.2"
+		"fivem-js": "^1.5.2",
+		"react-router-dom": "^7.1.1"
 	},
 	"devDependencies": {
 		"@citizenfx/client": "^2.0.7900-1",
