@@ -9,7 +9,7 @@ const Images = () => {
 		This will be displayed when the page is first loaded.
 	*/
 	const [imageUrl, setImageUrl] = useState(
-		"https://r2.fivemanage.com/pub/earoojlnb06p.png"
+		"https://cdn.pixabay.com/photo/2024/07/20/17/12/warning-8908707_1280.png"
 	);
 
 	// This changes the url to the one that is inputted.
