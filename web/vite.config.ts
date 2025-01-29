@@ -1,19 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react()],
-	base: "./",
-	build: {
-		outDir: "../build/web",
-		emptyOutDir: true,
-		assetsDir: "./",
-		rollupOptions: {
-			output: {
-				entryFileNames: "js/[name].js",
-				chunkFileNames: "js/[name].js",
-				assetFileNames: "styles/[name].[ext]",
-			},
-		},
-	}
+  plugins: [react()],
+  base: "./",
+  build: {
+    outDir: "build",
+    emptyOutDir: true, // Ensure the directory is emptied before building
+  },
 });

@@ -1,9 +1,0 @@
-{
-	"string": "Hello World",
-	"number": 123,
-	"boolean": true,
-	"array": [1, 2, 3],
-	"object": {
-		"something": "value"
-	}
-}
