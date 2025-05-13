@@ -1,0 +1,21 @@
+{
+	"name": "fivem_script",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "node build.js",
+		"watch": "node build.js --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"devDependencies": {
+		"@citizenfx/client": "^2.0.15015-1",
+		"@citizenfx/server": "^2.0.14862-1",
+		"esbuild": "^0.17.19",
+		"glob": "^10.3.10",
+		"typescript": "^5.8.3"
+	}
+}

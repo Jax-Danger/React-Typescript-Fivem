@@ -1,16 +1,7 @@
-fx_version "cerulean"
-game "gta5"
+fx_version 'cerulean'
+game 'gta5'
 
-author "MP-"
-description "MainPower "
-version "1.0.0"
+shared_script 'dist/shared/config.js'
 
-ui_page "web/build/index.html"
-files {
-    "web/build/index.html",
-    "web/build/assets/*",
-}
-
-client_scripts {
-    "resource/build/client/client.js"
-}
+client_script 'dist/client/**/*.js'
+server_script 'dist/server/**/*.js'
