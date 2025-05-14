@@ -4,15 +4,15 @@
 		"module": "ESNext",
 		"moduleResolution": "node",
 		"strict": true,
-		"outDir": "dist",
+		"outDir": "resource",
 		"rootDir": ".",
 		"esModuleInterop": true,
 		"allowJs": false,
 		"types": []
 	},
 	"include": [
-		"client",
-		"server",
-		"types"
+		"src/client",
+		"src/server",
+		"configEditor"
 	]
 }

@@ -10,7 +10,7 @@ async function build(entryPattern, outdir, label) {
 	const buildOptions = {
 		entryPoints,
 		outdir,
-		bundle: false,
+		bundle: true,
 		platform: 'browser',
 		target: 'es2020',
 		format: 'cjs',
@@ -20,7 +20,7 @@ async function build(entryPattern, outdir, label) {
 	if (isWatch) {
 		const ctx = await esbuild.context(buildOptions);
 		await ctx.watch();
-		console.log(`[Watch] Watching ${label}...`);
+		console.log(`[Watch] Watching ${label}`);
 	} else {
 		await esbuild.build(buildOptions);
 		console.log(`[Build] Built ${label}`);
@@ -28,6 +28,6 @@ async function build(entryPattern, outdir, label) {
 }
 
 (async () => {
-	await build('client/**/*.ts', 'dist/client', 'client');
-	await build('server/**/*.ts', 'dist/server', 'server');
+	await build('src/client/**/*.ts', 'resource/client', 'client');
+	await build('src/server/**/*.ts', 'resource/server', 'server');
 })();

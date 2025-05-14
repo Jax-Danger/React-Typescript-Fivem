@@ -1,0 +1,11 @@
+{
+	"files.exclude": {
+		"**/package.json": true,
+		"**/tsconfig.json": true,
+		"**/yarn.lock": true,
+		"**/build.js": true,
+		"**/yarn-error.log": true,
+		"**/.yarn.installed": true,
+		"**/node_modules": true
+	}
+}
