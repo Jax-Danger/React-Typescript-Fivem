@@ -1,10 +1,15 @@
 fx_version 'cerulean'
 game 'gta5'
 
-shared_script 'src/shared/config.js'
-client_scripts {
-  'resource/client/**/*.js'
+shared_scripts {
+	'config.js',
+	'resource/shared/shared.js'
 }
+
 server_scripts {
-  'resource/server/**/*.js'
+	'resource/server/server.js'
+}
+
+client_scripts {
+	'resource/client/client.js'
 }

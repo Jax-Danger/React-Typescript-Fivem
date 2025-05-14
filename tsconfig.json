@@ -11,8 +11,9 @@
 		"types": []
 	},
 	"include": [
-		"src/client",
-		"src/server",
-		"configEditor"
+		"src/client/**/*.ts",
+		"src/server/**/*.ts",
+		"configEditor",
+		"src/shared/SharedFramework.ts"
 	]
 }
