@@ -19,6 +19,4 @@ use `npm run dev` to build files and obfuscate them for production.
 use `npm run watch` to have files automatically built into javascript(not obfuscated)
 
 ## global values
-If you ever use global or globalThis for things like configs, make sure to define it at the top of your file with `//@ts-ignore` above it.
-This will remove any errors you may have. Ts is weird like that.
-You can also use type checking for your config in the configEditor's config.d.ts file. 
+All global variables, interfaces, and types are defined in the globals/global.d.ts file. By default it only has the config defined, but you can add more.
