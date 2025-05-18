@@ -8,8 +8,8 @@ const isWatch = process.argv.includes('--watch');
 const isObfuscate = process.argv.includes('--obfuscate');
 
 async function buildFolder(folderName) {
-	const inputDir = `src/${folderName}`;
-	const outputFile = `resource/${folderName}/${folderName}.js`;
+	const inputDir = `${folderName}`;
+	const outputFile = `../production/${folderName}/${folderName}.js`;
 
 	// Collect all .ts files in the folder (excluding main.ts if already there)
 	const files = glob.sync(`${inputDir}/**/*.ts`).filter(f => !f.endsWith('main.ts'));

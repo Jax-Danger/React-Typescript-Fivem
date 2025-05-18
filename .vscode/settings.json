@@ -1,12 +1,21 @@
 {
 	"files.exclude": {
-		"**/package.json": true,
-		"**/package-lock.json": true,
+		"**/package.json": false,
+		"**/package-lock.json": false,
 		"**/tsconfig.json": true,
 		"**/yarn.lock": true,
 		"**/build.js": true,
 		"**/yarn-error.log": true,
 		"**/.yarn.installed": true,
-		"**/node_modules": true
+		"**/node_modules": true,
+		"**/index.css":true,
+		"**/index.tsx":true,
+		"**/vite-env.d.ts":true,
+		"**/.env":true,
+		"**/index.html":true,
+		"**/vite.config.ts":true,
+		"**/.gitattributes":true,
+		"**/.gitignore":true,
+
 	}
 }

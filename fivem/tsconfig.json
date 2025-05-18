@@ -4,16 +4,15 @@
 		"module": "ESNext",
 		"moduleResolution": "node",
 		"strict": true,
-		"outDir": "resource",
+		"outDir": "./production",
 		"rootDir": ".",
 		"esModuleInterop": true,
 		"allowJs": false,
 		"types": []
 	},
 	"include": [
-		"src/client/**/*.ts",
-		"src/server/**/*.ts",
-		"configEditor",
-		"src/shared/SharedFramework.ts"
+		"globals",
+		"client/**/*.ts",
+		"server/**/*.ts",
 	]
 }
