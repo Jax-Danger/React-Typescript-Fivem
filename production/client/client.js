@@ -6,6 +6,9 @@
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  };
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -26,22 +29,53 @@
     mod
   ));
 
+  // client/util/utilities.ts
+  var NUI;
+  var init_utilities = __esm({
+    "client/util/utilities.ts"() {
+      "use strict";
+      NUI = class {
+        // Makes registering NUI Callbacks in TS much easier
+        static register(eventName, handler) {
+          RegisterNuiCallbackType(eventName);
+          on(`__cfx_nui:${eventName}`, (data, cb) => {
+            handler(data, cb);
+          });
+          this.registered.push(eventName);
+        }
+        // Lists all registered callbacks for debugging.
+        static list() {
+          return [...this.registered];
+        }
+        // Sends information to UI easier.
+        static send(action, data) {
+          SendNUIMessage({
+            action,
+            data
+          });
+        }
+      };
+      NUI.registered = [];
+      NUI.register("closeBox", (data, cb) => {
+        console.log("Closed box");
+        cb({});
+      });
+    }
+  });
+
   // client/client.ts
   var require_client = __commonJS({
     "client/client.ts"() {
       "use strict";
+      init_utilities();
       onNet("client:event", () => {
         console.log("triggered client event from server. Now triggering server event.");
         emitNet("server:event");
       });
-      function SendToUi(action, data) {
-        SendNUIMessage({
-          action,
-          data
-        });
-      }
-      RegisterCommand("open", () => {
-        SendToUi("open", config);
+      RegisterCommand("open", (source) => {
+        NUI.send("open", config);
+        console.log(config);
+        SetNuiFocus(true, true);
       }, false);
     }
   });
@@ -50,6 +84,7 @@
   var require_main = __commonJS({
     "client/main.ts"() {
       var import_client = __toESM(require_client());
+      init_utilities();
     }
   });
   require_main();

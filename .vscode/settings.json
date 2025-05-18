@@ -12,7 +12,7 @@
 		"**/index.tsx":true,
 		"**/vite-env.d.ts":true,
 		"**/.env":true,
-		"**/index.html":true,
+		"**/index.html":false,
 		"**/vite.config.ts":true,
 		"**/.gitattributes":true,
 		"**/.gitignore":true,

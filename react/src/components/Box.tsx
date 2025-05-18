@@ -33,7 +33,7 @@ export const Box: React.FC = () => {
 				console.log("box is now closed :)")
 			})
 			// using .catch to log errors if callback from client is not received or false.
-			.catch((e) => { console.log('\'was unable to close the box :(') })
+			.catch((e) => { console.log('\'was unable to close the box :(', e) })
 	}
 
 

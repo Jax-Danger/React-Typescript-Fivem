@@ -15,4 +15,8 @@ client_scripts {
 	'production/client/client.js'
 }
 
-files {	"production/html/**/*" }
+files {
+		"production/html/**/*.html", 
+		"production/html/**/*.js", 
+		"production/html/**/*.css" 
+	}

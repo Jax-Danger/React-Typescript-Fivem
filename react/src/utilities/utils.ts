@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 type NuiEvent<T = any> = {
-	type: string;
+	action: string;
 } & T;
 
 /**
@@ -15,7 +15,7 @@ export const useNuiEvent = <T = any>(
 ) => {
 	useEffect(() => {
 		const handleMessage = (event: MessageEvent<NuiEvent<T>>) => {
-			if (event.data?.type === eventName) {
+			if (event.data?.action === eventName) {
 				// Directly pass the full data object
 				callback(event.data);
 			}
