@@ -11,7 +11,7 @@ export const Box: React.FC = () => {
 	const [isPvpEnabled, setIsPvpEnabled] = useState<string>('False')
 
 	// useNuiEvent from @utilities/utils.ts to await NUI Messages easily.
-	useNuiEvent('configData', (data: any) => {
+	useNuiEvent('open', (data: any) => {
 		setServerName(data.ServerName)
 		setMaxPlayers(data.MaxPlayers)
 		setStartingMoney(data.StartingMoney)

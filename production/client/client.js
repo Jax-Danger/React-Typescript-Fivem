@@ -34,6 +34,15 @@
         console.log("triggered client event from server. Now triggering server event.");
         emitNet("server:event");
       });
+      function SendToUi(action, data) {
+        SendNUIMessage({
+          action,
+          data
+        });
+      }
+      RegisterCommand("open", () => {
+        SendToUi("open", config);
+      }, false);
     }
   });
 

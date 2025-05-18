@@ -4,15 +4,15 @@
 		"module": "ESNext",
 		"moduleResolution": "node",
 		"strict": true,
-		"outDir": "./production",
+		"outDir": "production",
 		"rootDir": ".",
 		"esModuleInterop": true,
 		"allowJs": false,
 		"types": []
 	},
 	"include": [
-		"globals",
-		"client/**/*.ts",
-		"server/**/*.ts",
+		"fivem/client/**/*.ts",
+		"fivem/server/**/*.ts",
+		"types",
 	]
 }

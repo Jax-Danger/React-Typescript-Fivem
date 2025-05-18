@@ -1,5 +1,3 @@
-/// <reference types="@citizenfx/client" />
-
 onNet('client:event', () => {
 	console.log('triggered client event from server. Now triggering server event.')
 	emitNet('server:event')
@@ -7,7 +5,10 @@ onNet('client:event', () => {
 
 function SendToUi(action: string, data: {}) {
 	SendNUIMessage({
-		action: 'open',
+		action: action,
 		data: data
 	})
 }
+RegisterCommand('open', () => {
+	SendToUi('open', config)
+}, false)
