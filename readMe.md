@@ -13,11 +13,12 @@ Note: You don't always have to use it, but if you have issues with native calls,
 
 ## Commands
 
-First thing to run is `npm i`. This installs all the packages via node(which is required) to actually allow you to code.
+First thing to run is `yarn`. This installs all the packages via the yarn package to actually allow you to code.
+This was updated to use yarn instead of npm. They do the same thing, but the command is different.
 
-Use `npm run build` to build files in javascript.
-use `npm run dev` to build files and obfuscate them for production.
-use `npm run watch` to have files automatically built into javascript(not obfuscated)
+Use `yarn build` to build files in javascript.
+use `yarn dev` to build files and obfuscate them for production.
+use `yarn watch` to have files automatically built into javascript(not obfuscated)
 
 ## global values
 
