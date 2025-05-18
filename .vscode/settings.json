@@ -16,6 +16,5 @@
 		"**/vite.config.ts":true,
 		"**/.gitattributes":true,
 		"**/.gitignore":true,
-
 	}
 }
