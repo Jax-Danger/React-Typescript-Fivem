@@ -1,5 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
+ui_page 'production/html/index.html'
 
 shared_scripts {
 	'production/config.js',
@@ -13,3 +14,5 @@ server_scripts {
 client_scripts {
 	'production/client/client.js'
 }
+
+files {	"production/html/**/*" }

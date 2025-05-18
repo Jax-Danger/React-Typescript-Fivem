@@ -2,7 +2,7 @@
 	"files.exclude": {
 		"**/package.json": true,
 		"**/package-lock.json": true,
-		"**/tsconfig.json": false,
+		"**/tsconfig.json": true,
 		"**/yarn.lock": true,
 		"**/build.js": true,
 		"**/yarn-error.log": true,
