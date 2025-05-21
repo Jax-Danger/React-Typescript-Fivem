@@ -1,6 +1,6 @@
 {
 	"files.exclude": {
-		"**/package.json": false,
+		"**/package.json": true,
 		"**/package-lock.json": true,
 		"**/yarn.lock": true,
 		"**/yarn-error.log": true,
