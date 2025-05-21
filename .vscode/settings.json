@@ -15,5 +15,6 @@
 		"**/__server_main.ts":false,
 		"**/__shared_main.ts":false,
 		"**/tsconfig.json":false,
+		"**/build.config.json":false
 	}
 }

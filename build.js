@@ -28,8 +28,8 @@ const targets = ['client', 'server', 'shared'];
 
 // Postinstall script: create "editME" base resource
 if (process.env.npm_lifecycle_event === 'postinstall') {
-	const editMePath = path.join(root, 'editME');
-	const srcPath = path.join(editMePath, 'src');
+	const ResourceA = path.join(root, 'ResourceA');
+	const srcPath = path.join(ResourceA, 'src');
 	const structure = {
 		client: {
 			filename: 'base.ts',
@@ -41,15 +41,23 @@ if (process.env.npm_lifecycle_event === 'postinstall') {
 		},
 		shared: {
 			filename: 'base.ts',
-			content: `/// <reference types=\"../../global.d.ts\" />\n`
+			content: `/// <reference types=\"../global.d.ts\" />\n`
 		},
 		config: {
 			filename: 'config.ts',
-			content: `// edit the config based on the config.d.ts file.
-globalThis.config = {};
+			content: `// edit the config based on the global.d.ts file.
+globalThis.config = {
+	resourceName: 'ResourceA',
+	enabled: false,
+	permissions: [
+		'user',
+		'admin',
+	],
+	debugMode: false
+};
 ` },
 		configType: {
-			filename: 'config.d.ts',
+			filename: 'global.d.ts',
 			content: `interface Config {
   resourceName: string;
   enabled: boolean;
@@ -57,14 +65,21 @@ globalThis.config = {};
   debugMode?: boolean;
 }
 
-declare const config: Config;
-` }
+declare var config: Config;
+` },
+		tsconfig: {
+			filename: 'tsconfig.json',
+			content: `{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*"]
+}`
+		}
 	};
 
-	if (!fs.existsSync(editMePath)) {
-		fs.mkdirSync(editMePath);
+	if (!fs.existsSync(ResourceA)) {
+		fs.mkdirSync(ResourceA);
 		fs.mkdirSync(srcPath);
-		fs.writeFileSync(path.join(editMePath, 'fxmanifest.lua'), `fx_version 'cerulean'\ngame 'gta5'\n\nclient_script 'dist/client.js'\nserver_script 'dist/server.js'\nshared_script 'dist/shared.js'\n`);
+		fs.writeFileSync(path.join(ResourceA, 'fxmanifest.lua'), `fx_version 'cerulean'\ngame 'gta5'\n\nclient_script 'dist/client.js'\nserver_script 'dist/server.js'\nshared_script 'dist/shared.js'\n`);
 
 		for (const key of ['client', 'server', 'shared']) {
 			const dir = path.join(srcPath, key);
@@ -74,7 +89,67 @@ declare const config: Config;
 
 		fs.writeFileSync(path.join(srcPath, structure.config.filename), structure.config.content);
 		fs.writeFileSync(path.join(srcPath, structure.configType.filename), structure.configType.content);
-		console.log('✅ Created base resource: packages/editME');
+		fs.writeFileSync(path.join(srcPath, structure.tsconfig.filename), structure.tsconfig.content);
+		console.log('✅ Created base resource: packages/ResourceA');
+	}
+}
+if (process.env.npm_lifecycle_event === 'postinstall') {
+	const ResourceB = path.join(root, 'ResourceB');
+	const srcPath = path.join(ResourceB, 'src');
+	const structure = {
+		client: {
+			filename: 'base.ts',
+			content: `/// <reference types=\"@citizenfx/client\" />\n`
+		},
+		server: {
+			filename: 'base.ts',
+			content: `/// <reference types=\"@citizenfx/server\" />\n`
+		},
+		shared: {
+			filename: 'base.ts',
+			content: `/// <reference types=\"../global.d.ts\" />\n`
+		},
+		config: {
+			filename: 'config.ts',
+			content: `// edit the config based on the global.d.ts file.
+globalThis.config = {};
+` },
+		configType: {
+			filename: 'global.d.ts',
+			content: `interface Config {
+  resourceName: string;
+  enabled: boolean;
+  permissions: string[];
+  debugMode?: boolean;
+}
+
+declare const config: Config;
+` },
+		tsconfig: {
+			filename: 'tsconfig.json',
+			content: `{
+"extends": "../../tsconfig.json",
+"include": ["src/**/*"]
+}`
+		}
+	};
+
+	if (!fs.existsSync(ResourceB)) {
+		fs.mkdirSync(ResourceB);
+		fs.mkdirSync(srcPath);
+		fs.writeFileSync(path.join(ResourceB, 'fxmanifest.lua'), `fx_version 'cerulean'\ngame 'gta5'\n\nclient_script 'dist/client.js'\nserver_script 'dist/server.js'\nshared_script 'dist/shared.js'\n`);
+
+		for (const key of ['client', 'server', 'shared']) {
+			const dir = path.join(srcPath, key);
+			fs.mkdirSync(dir);
+			fs.writeFileSync(path.join(dir, structure[key].filename), structure[key].content);
+		}
+
+		fs.writeFileSync(path.join(srcPath, structure.config.filename), structure.config.content);
+		fs.writeFileSync(path.join(srcPath, structure.configType.filename), structure.configType.content);
+
+		fs.writeFileSync(path.join(srcPath, structure.tsconfig.filename), structure.tsconfig.content);
+		console.log('✅ Created base resource: packages/ResourceB');
 	}
 }
 
