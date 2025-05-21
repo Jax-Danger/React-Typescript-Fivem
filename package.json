@@ -9,7 +9,7 @@
     "build:obf": "node build.js --obfuscate",
     "build:watch": "node build.js --watch",
 
-		"postinstall": "node build.js"
+		"postinstall": "node newResource.js resourceA && node newResource.js resourceB"
   },
   "devDependencies": {
     "chokidar": "^4.0.3",

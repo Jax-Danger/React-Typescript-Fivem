@@ -1,6 +1,6 @@
 {
 	"files.exclude": {
-		"**/package.json": true,
+		"**/package.json": false,
 		"**/package-lock.json": true,
 		"**/yarn.lock": true,
 		"**/yarn-error.log": true,
@@ -10,7 +10,7 @@
 		"**/.gitignore":true,
 
 		"**/dist":true,
-		"**/build.js":true,
+		"**/build.js":false,
 		"**/newResource.js":true,
 		"**/__client_main.ts":true,
 		"**/__server_main.ts":true,
