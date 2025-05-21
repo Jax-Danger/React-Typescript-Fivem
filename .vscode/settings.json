@@ -1,20 +1,20 @@
 {
 	"files.exclude": {
-		"**/package.json": false,
-		"**/package-lock.json": false,
-		"**/yarn.lock": false,
-		"**/build.js": false,
-		"**/yarn-error.log": false,
-		"**/.yarn.installed": false,
-		"**/node_modules": false,
-		"**/.gitattributes":false,
-		"**/.gitignore":false,
+		"**/package.json": true,
+		"**/package-lock.json": true,
+		"**/yarn.lock": true,
+		"**/build.js": true,
+		"**/yarn-error.log": true,
+		"**/.yarn.installed": true,
+		"**/node_modules": true,
+		"**/.gitattributes":true,
+		"**/.gitignore":true,
 
-		"**/dist":false,
-		"**/__client_main.ts":false,
-		"**/__server_main.ts":false,
-		"**/__shared_main.ts":false,
+		"**/dist":true,
+		"**/__client_main.ts":true,
+		"**/__server_main.ts":true,
+		"**/__shared_main.ts":true,
 		"**/tsconfig.json":false,
-		"**/build.config.json":false
+		"**/build.config.json":true
 	}
 }
