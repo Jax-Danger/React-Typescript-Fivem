@@ -3,18 +3,18 @@
 		"**/package.json": true,
 		"**/package-lock.json": true,
 		"**/yarn.lock": true,
-		"**/build.js": true,
+		"**/build.js": false,
 		"**/yarn-error.log": true,
 		"**/.yarn.installed": true,
 		"**/node_modules": true,
 		"**/.gitattributes":true,
 		"**/.gitignore":true,
 
-		"**/dist":true,
+		"**/dist":false,
 		"**/__client_main.ts":true,
 		"**/__server_main.ts":true,
 		"**/__shared_main.ts":true,
-		"**/tsconfig.json":false,
-		"**/build.config.json":true
+		"**/tsconfig.json":true,
+		"**/build.config.json":false
 	}
 }

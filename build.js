@@ -70,7 +70,7 @@ declare var config: Config;
 		tsconfig: {
 			filename: 'tsconfig.json',
 			content: `{
-  "extends": "../../tsconfig.json",
+  "extends": "../../../tsconfig.json",
   "include": ["src/**/*"]
 }`
 		}
@@ -128,7 +128,7 @@ declare const config: Config;
 		tsconfig: {
 			filename: 'tsconfig.json',
 			content: `{
-"extends": "../../tsconfig.json",
+"extends": "../../../tsconfig.json",
 "include": ["src/**/*"]
 }`
 		}
@@ -159,7 +159,7 @@ async function buildFolder(target, onlyResources) {
 	for (const name of resList) {
 		const base = path.join(root, name);
 		const src = path.join(base, 'src');
-		const dist = path.join(base, 'dist');
+		const dist = path.join(fivemResourcesPath, name);
 		fs.mkdirSync(dist, { recursive: true });
 
 		const files = glob(`${src}/${target}/**/*.ts`.replace(/\\/g, '/'));
@@ -169,7 +169,7 @@ async function buildFolder(target, onlyResources) {
 		}
 
 		const entry = path.join(src, `__${target}_main.ts`);
-		const out = path.join(dist, `${target}.js`);
+		const out = path.join(fivemResourcesPath, name, `${target}.js`);
 		const imports = files.map(f => `import './${path.relative(src, f).replace(/\\/g, '/').replace(/\.ts$/, '')}';`);
 		fs.writeFileSync(entry, imports.join('\n'));
 
@@ -210,7 +210,7 @@ async function buildFolder(target, onlyResources) {
 		if (!isWatch) fs.unlinkSync(entry);
 
 		const configTs = path.join(src, 'config.ts');
-		const configJs = path.join(dist, 'config.js');
+		const configJs = path.join(fivemResourcesPath, name, 'config.js');
 		if (fs.existsSync(configTs)) {
 			await build({
 				entryPoints: [configTs],
@@ -223,42 +223,16 @@ async function buildFolder(target, onlyResources) {
 			console.log(`[Build] ${name}/config.js`);
 		}
 
-		const resourceOut = path.join(fivemResourcesPath, name);
-		const distDir = path.join(base, 'dist');
 		const manifestSrc = path.join(base, 'fxmanifest.lua');
+		const manifestDest = path.join(fivemResourcesPath, name, 'fxmanifest.lua');
 
-		if (!fs.existsSync(manifestSrc)) {
+		if (fs.existsSync(manifestSrc)) {
+			fs.copyFileSync(manifestSrc, manifestDest);
+			console.log(`[Manifest] Copied fxmanifest.lua for ${name}`);
+		} else if (!fs.existsSync(manifestSrc)) {
 			console.log(`[Skip] ${name} missing fxmanifest`);
 			continue;
 		}
-
-		if (fs.existsSync(resourceOut)) fs.rmSync(resourceOut, { recursive: true });
-		fs.mkdirSync(resourceOut, { recursive: true });
-
-		const distFiles = fs.readdirSync(distDir);
-		for (const file of distFiles) {
-			const src = path.join(distDir, file);
-			const dest = path.join(resourceOut, file);
-			try {
-				if (fs.existsSync(dest)) {
-					const stat = fs.lstatSync(dest);
-					if (stat.isSymbolicLink() || stat.isFile()) {
-						fs.unlinkSync(dest);
-					}
-				}
-				fs.symlinkSync(src, dest, 'file');
-			} catch (err) {
-				if (err.code === 'EPERM') {
-					console.warn(`[Fallback] Copying instead of linking: ${file}`);
-					fs.copyFileSync(src, dest);
-				} else {
-					console.error(`[Error] Failed to create symlink: ${dest}`, err);
-				}
-			}
-		}
-
-		fs.copyFileSync(manifestSrc, path.join(resourceOut, 'fxmanifest.lua'));
-		console.log(`[Linked] ${name}/* → ${resourceOut}`);
 	}
 }
 
