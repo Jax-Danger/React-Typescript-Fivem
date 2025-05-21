@@ -2,12 +2,6 @@
 
 This is a monorepo, which essentially means that this is one big typescript project with multiple fivem resources created inside.
 
-# setup
-
-To get started, modify the build.config.json file to specify the output for the _developement_ builds of your resources. When you are ready to use the scripts in _production_ then manually move them out of the monorepo and into your resources folder.
-
-If you never move the actual folders out of the monorepo for produciton, the resource _will not work_. This is due to the symlink that is created each time yarn build command is used.
-
 ## Getting started
 
 After modifying the build.config.json file, open the vsc terminal via `CTRL + ~` and type `yarn`. This will install all packages required for coding fivem resources.
